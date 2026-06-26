@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2"><FiMapPin className="text-primary-500" /> Dhaka, Bangladesh</li>
               <li className="flex items-center gap-2"><FiPhone className="text-primary-500" /> +880 19637 04659</li>
-              <li className="flex items-center gap-2"><FiMail className="text-primary-500" /> hello@nestquest.com</li>
+              <li className="flex items-center gap-2"><FiMail className="text-primary-500" /> yasingazi343@gmail.com</li>
             </ul>
           </div>
         </div>
