@@ -52,7 +52,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2"><FiMapPin className="text-primary-500" /> Dhaka, Bangladesh</li>
-              <li className="flex items-center gap-2"><FiPhone className="text-primary-500" /> +880 1700 000000</li>
+              <li className="flex items-center gap-2"><FiPhone className="text-primary-500" /> +880 19637 04659</li>
               <li className="flex items-center gap-2"><FiMail className="text-primary-500" /> hello@nestquest.com</li>
             </ul>
           </div>
