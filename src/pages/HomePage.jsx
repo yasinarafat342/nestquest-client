@@ -70,8 +70,8 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={0} className="max-w-3xl">
-            <span className="inline-block bg-primary-500/20 text-primary-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-primary-500/30">
-              🏠 Bangladesh's #1 Rental Platform
+            <span className="inline-block bg-primary-500/30 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-primary-400/50">
+  🏠 Bangladesh's #1 Rental Platform
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
               Find Your{" "}
