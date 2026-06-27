@@ -50,12 +50,14 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             {user ? (
               <div className="flex items-center gap-3">
-                <img
-                  src={user.photo || `https://ui-avatars.com/api/?name=${user.name}`}
-                  alt={user.name}
-                  className="w-9 h-9 rounded-full object-cover border-2 border-primary-200"
-                />
-                <span className="text-sm text-gray-600 font-medium">{user.name.split(" ")[0]}</span>
+                <Link to={getDashboardLink()} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <img
+                    src={user.photo || `https://ui-avatars.com/api/?name=${user.name}`}
+                    alt={user.name}
+                    className="w-9 h-9 rounded-full object-cover border-2 border-primary-200"
+                  />
+                  <span className="text-sm text-gray-600 font-medium">{user.name.split(" ")[0]}</span>
+                </Link>
                 <button onClick={handleLogout} className="btn-outline text-sm py-2 px-4">
                   Logout
                 </button>
