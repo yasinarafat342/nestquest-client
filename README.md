@@ -1,9 +1,13 @@
 # NestQuest — Property Rental & Booking Platform (Client)
 
-Frontend React application for the NestQuest Property Rental & Booking Platform.
+## Project Name
+**NestQuest** — Property Rental & Booking Platform (Frontend)
+
+## Purpose
+NestQuest is a full-stack property rental marketplace that connects tenants and property owners through a transparent and secure rental marketplace. Property owners can list rental properties, while tenants can discover, book, and pay reservation fees online. The platform features role-based access control (Tenant, Owner, Admin), property management, booking workflows, secure Stripe payments, a review system, and administrative moderation.
 
 ## Live URL
-> Add your Vercel deployed URL here
+🔗 https://nestquest-client.vercel.app
 
 ## Tech Stack
 - React 18 + Vite
@@ -17,7 +21,7 @@ Frontend React application for the NestQuest Property Rental & Booking Platform.
 - Axios
 - React Hot Toast
 
-## npm Packages
+## npm Packages Used
 | Package | Purpose |
 |---------|---------|
 | `react-router-dom` | Client-side routing |
@@ -30,21 +34,23 @@ Frontend React application for the NestQuest Property Rental & Booking Platform.
 | `react-hot-toast` | Toast notifications |
 | `react-icons` | Icon library |
 | `date-fns` | Date formatting |
+| `jspdf` / `jspdf-autotable` | PDF earnings report generation |
 | `tailwindcss` | Utility CSS framework |
 
 ## Key Features
-- JWT-based auth with Google social login (Firebase)
-- Role-based UI (Tenant / Owner / Admin)
-- Homepage with hero, search bar, featured properties, reviews, top locations, stats — all animated with Framer Motion
-- All Properties page with backend search, filter (type), sort (price), and pagination
-- Property Details page with image gallery, favorites, booking modal
-- Stripe payment flow with booking creation
-- Tenant dashboard: My Bookings, Favorites, Profile
-- Owner dashboard: Analytics (Recharts line chart), Add Property, My Properties (with rejection feedback eye icon), Booking Requests
-- Admin panel: Users (change role), Properties (approve/reject with feedback modal), Bookings, Transactions
-- Persistent login (localStorage token + /api/auth/me on load)
-- Private routes + role-protected routes
-- Fully responsive (mobile, tablet, desktop)
+- 🔐 JWT-based authentication with Google social login (Firebase) — social-login users default to Tenant role
+- 👥 Role-based UI (Tenant / Owner / Admin)
+- 🏡 Homepage with hero, search bar, featured properties, customer reviews, top locations, and rental statistics — all animated with Framer Motion
+- 🔍 All Properties page with backend-driven search, filter (property type), sort (price), and pagination
+- 🏠 Property Details page with image gallery, favorites, and booking modal
+- 💳 Stripe payment flow with automatic booking creation on success
+- 📋 Tenant Dashboard — My Bookings, Favorites, Profile
+- 📊 Owner Dashboard — Analytics with Recharts line chart, Add Property, My Properties (with rejection feedback 👁 icon), Booking Requests
+- 🛠️ Admin Dashboard — Users (change role), Properties (approve/reject with feedback modal), Bookings, Transactions
+- 🔄 Persistent login session (no logout/redirect on page reload of private routes)
+- 🛡️ Private routes and role-protected routes
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- 📄 Downloadable monthly earnings PDF report for property owners
 
 ## Setup
 
@@ -56,20 +62,3 @@ npm run dev
 ```
 
 ## Environment Variables
-```
-VITE_API_URL=http://localhost:5000/api
-VITE_FIREBASE_API_KEY=
-VITE_FIREBASE_AUTH_DOMAIN=
-VITE_FIREBASE_PROJECT_ID=
-VITE_FIREBASE_STORAGE_BUCKET=
-VITE_FIREBASE_MESSAGING_SENDER_ID=
-VITE_FIREBASE_APP_ID=
-VITE_STRIPE_PUBLISHABLE_KEY=
-```
-
-## Deployment (Vercel)
-1. Push to GitHub
-2. Import repo in Vercel
-3. Set all `VITE_*` environment variables in Vercel dashboard
-4. Add your Vercel domain to Firebase authorized domains
-5. Deploy!
