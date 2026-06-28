@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FiMapPin, FiMaximize } from "react-icons/fi";
+import { FiMapPin, FiMaximize, FiShare2 } from "react-icons/fi";
 import { MdBed, MdBathtub } from "react-icons/md";
 import { useAuth } from "../../context/AuthContext.jsx";
+import toast from "react-hot-toast";
 
 export default function PropertyCard({ property, index = 0 }) {
   const { user } = useAuth();
@@ -11,6 +12,25 @@ export default function PropertyCard({ property, index = 0 }) {
   const handleViewDetails = () => {
     if (!user) navigate("/login");
     else navigate(`/properties/${property._id}`);
+  };
+
+  const handleShare = async (e) => {
+    e.stopPropagation();
+    const url = `${window.location.origin}/properties/${property._id}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: property.title, text: `Check out this property: ${property.title}`, url });
+      } catch {
+        // user cancelled
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(url);
+        toast.success("Link copied to clipboard!");
+      } catch {
+        toast.error("Could not copy link");
+      }
+    }
   };
 
   return (
@@ -34,6 +54,13 @@ export default function PropertyCard({ property, index = 0 }) {
         <span className="absolute top-3 right-3 bg-white/90 text-dark-900 text-xs font-bold px-3 py-1 rounded-full">
           ৳{property.rent?.toLocaleString()}/{property.rentType}
         </span>
+        <button
+          onClick={handleShare}
+          aria-label="Share property"
+          className="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-dark-900 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          <FiShare2 size={14} />
+        </button>
       </div>
 
       {/* Content */}

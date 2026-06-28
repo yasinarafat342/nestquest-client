@@ -10,6 +10,7 @@ import { useAuth } from "../context/AuthContext.jsx";
 import BookingModal from "../components/booking/BookingModal.jsx";
 import ReviewSection from "../components/review/ReviewSection.jsx";
 import Loader from "../components/common/Loader.jsx";
+import ShareButton from "../components/common/ShareButton.jsx";
 
 export default function PropertyDetailsPage() {
   const { id } = useParams();
@@ -104,16 +105,18 @@ export default function PropertyDetailsPage() {
                 <button onClick={() => setShowBooking(true)} className="btn-primary w-full mb-3">
                   Book Property
                 </button>
-                <button onClick={() => favMutation.mutate()} className="btn-outline w-full flex items-center justify-center gap-2">
+                <button onClick={() => favMutation.mutate()} className="btn-outline w-full flex items-center justify-center gap-2 mb-3">
                   <FiHeart /> Add to Favorites
                 </button>
               </>
             )}
             {!user && (
-              <button onClick={() => navigate("/login")} className="btn-primary w-full">
+              <button onClick={() => navigate("/login")} className="btn-primary w-full mb-3">
                 Login to Book
               </button>
             )}
+
+            <ShareButton title={property.title} text={`Check out this property: ${property.title} in ${property.location}`} />
           </div>
         </div>
       </div>
